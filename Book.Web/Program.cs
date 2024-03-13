@@ -1,3 +1,6 @@
+using Book.Web.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Book.Web
 {
     public class Program
@@ -8,6 +11,9 @@ namespace Book.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ApplicationDbContext>(
+                option => option.UseSqlServer(builder.Configuration.GetConnectionString("default")));
+
 
             var app = builder.Build();
 
