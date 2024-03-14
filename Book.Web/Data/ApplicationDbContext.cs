@@ -9,7 +9,16 @@ namespace Book.Web.Data
         {
                 
         }
-        public DbSet<Category> Categories { get; set; } 
+        public DbSet<Category> Categories { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+                new Category { Id = 1, Name = "Test1", DisplayOrder = 1 },
+                new Category { Id = 2, Name = "history", DisplayOrder = 2 },
+                new Category { Id = 2, Name = "romantic", DisplayOrder =3 }
+                );
+
+        }
     }
 
 }
