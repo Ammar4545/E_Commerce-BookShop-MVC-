@@ -15,7 +15,7 @@ namespace Book.Web.Data
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Test1", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "history", DisplayOrder = 2 },
-                new Category { Id = 2, Name = "romantic", DisplayOrder =3 }
+                new Category { Id = 3, Name = "romantic", DisplayOrder =3 }
                 );
 
         }
